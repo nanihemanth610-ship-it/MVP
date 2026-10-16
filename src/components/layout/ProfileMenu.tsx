@@ -147,12 +147,21 @@ export function ProfileMenu() {
           {/* Actions */}
           <div className="p-1 space-y-0.5">
             <Link
+              to="/profile"
+              onClick={() => setIsOpen(false)}
+              className="flex w-full items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs text-muted-foreground hover:bg-secondary/60 hover:text-foreground transition-colors cursor-pointer"
+            >
+              <User className="h-3.5 w-3.5 text-primary" />
+              <span>Identity Profile &amp; RLS Grants</span>
+            </Link>
+
+            <Link
               to="/login"
               onClick={() => setIsOpen(false)}
               className="flex w-full items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs text-muted-foreground hover:bg-secondary/60 hover:text-foreground transition-colors cursor-pointer"
             >
               <LogIn className="h-3.5 w-3.5 text-primary" />
-              <span>Change Persona / Sign In</span>
+              <span>Switch Account / Sign In</span>
             </Link>
 
             <button

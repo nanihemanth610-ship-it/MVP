@@ -17,7 +17,8 @@ export type UserRole =
   | "hospital_admin"
   | "insurer_reviewer"
   | "insurer_admin"
-  | "platform_admin";
+  | "platform_admin"
+  | "super_admin";
 export type ClaimStatus =
   | "draft"
   | "extracted"
@@ -34,6 +35,154 @@ export type ReviewDecisionOutcome =
 export interface Database {
   public: {
     Tables: {
+      profiles: {
+        Row: {
+          id: string;
+          full_name: string | null;
+          email: string | null;
+          avatar_url: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id: string;
+          full_name?: string | null;
+          email?: string | null;
+          avatar_url?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          full_name?: string | null;
+          email?: string | null;
+          avatar_url?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+      };
+      organizations: {
+        Row: {
+          id: string;
+          name: string;
+          organization_type: "hospital" | "insurance";
+          status: "pending" | "active" | "suspended" | "rejected";
+          code: string | null;
+          city: string | null;
+          state: string | null;
+          contact_email: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          name: string;
+          organization_type: "hospital" | "insurance";
+          status?: "pending" | "active" | "suspended" | "rejected";
+          code?: string | null;
+          city?: string | null;
+          state?: string | null;
+          contact_email?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          name?: string;
+          organization_type?: "hospital" | "insurance";
+          status?: "pending" | "active" | "suspended" | "rejected";
+          code?: string | null;
+          city?: string | null;
+          state?: string | null;
+          contact_email?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+      };
+      organization_members: {
+        Row: {
+          id: string;
+          organization_id: string;
+          user_id: string;
+          role: "hospital_admin" | "hospital_staff" | "insurance_admin" | "insurance_reviewer";
+          membership_status: "active" | "suspended" | "pending";
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          organization_id: string;
+          user_id: string;
+          role: "hospital_admin" | "hospital_staff" | "insurance_admin" | "insurance_reviewer";
+          membership_status?: "active" | "suspended" | "pending";
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          organization_id?: string;
+          user_id?: string;
+          role?: "hospital_admin" | "hospital_staff" | "insurance_admin" | "insurance_reviewer";
+          membership_status?: "active" | "suspended" | "pending";
+          created_at?: string;
+          updated_at?: string;
+        };
+      };
+      user_roles: {
+        Row: {
+          id: string;
+          user_id: string;
+          role: "super_admin" | "hospital_admin" | "hospital_staff" | "insurance_admin" | "insurance_reviewer";
+          organization_id: string | null;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          role: "super_admin" | "hospital_admin" | "hospital_staff" | "insurance_admin" | "insurance_reviewer";
+          organization_id?: string | null;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          role?: "super_admin" | "hospital_admin" | "hospital_staff" | "insurance_admin" | "insurance_reviewer";
+          organization_id?: string | null;
+          created_at?: string;
+        };
+      };
+      admin_audit_logs: {
+        Row: {
+          id: string;
+          actor_user_id: string | null;
+          action: string;
+          target_type: string;
+          target_id: string | null;
+          organization_id: string | null;
+          metadata: Json;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          actor_user_id?: string | null;
+          action: string;
+          target_type: string;
+          target_id?: string | null;
+          organization_id?: string | null;
+          metadata?: Json;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          actor_user_id?: string | null;
+          action?: string;
+          target_type?: string;
+          target_id?: string | null;
+          organization_id?: string | null;
+          metadata?: Json;
+          created_at?: string;
+        };
+      };
       user_profiles: {
         Row: {
           id: string;
@@ -144,6 +293,8 @@ export interface Database {
           assigned_reviewer_id: string | null;
           reviewer_notes: string | null;
           submission_notes: string | null;
+          hospital_org_id?: string | null;
+          insurance_org_id?: string | null;
           is_synthetic_demo: boolean;
           created_at: string;
           updated_at: string;
@@ -184,6 +335,8 @@ export interface Database {
           assigned_reviewer_id?: string | null;
           reviewer_notes?: string | null;
           submission_notes?: string | null;
+          hospital_org_id?: string | null;
+          insurance_org_id?: string | null;
           is_synthetic_demo?: boolean;
           created_at?: string;
           updated_at?: string;
@@ -224,6 +377,8 @@ export interface Database {
           assigned_reviewer_id?: string | null;
           reviewer_notes?: string | null;
           submission_notes?: string | null;
+          hospital_org_id?: string | null;
+          insurance_org_id?: string | null;
           is_synthetic_demo?: boolean;
           created_at?: string;
           updated_at?: string;

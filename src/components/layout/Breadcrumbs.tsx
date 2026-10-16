@@ -21,6 +21,14 @@ export function Breadcrumbs() {
         return "BB-DEMO-1001 (Apollo Bengaluru)";
       case "claim-apex-001":
         return "BB-DEMO-1003 (Fortis Gurugram)";
+      case "admin":
+        return "Super Admin Portal";
+      case "hospital":
+        return "Hospital Admin Portal";
+      case "insurance":
+        return "Insurance Admin Portal";
+      case "profile":
+        return "Identity Profile & Permissions";
       case "patient":
         return "Patient Plain View (EN/తెలుగు)";
       case "claim-beacon-003":

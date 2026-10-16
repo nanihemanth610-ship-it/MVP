@@ -9,7 +9,8 @@ export type UserRole =
   | "hospital_admin"
   | "insurer_reviewer"
   | "insurer_admin"
-  | "platform_admin";
+  | "platform_admin"
+  | "super_admin";
 
 export type ClaimStatus =
   | "draft"

@@ -20,7 +20,8 @@ export type UserRole =
   | "hospital_admin"
   | "insurer_reviewer"
   | "insurer_admin"
-  | "platform_admin";
+  | "platform_admin"
+  | "super_admin";
 
 export interface UserSession {
   id: string;
@@ -567,6 +568,19 @@ export const ROLE_PERMISSIONS: Record<
     RESET_DEMO_DATA: true,
   },
   platform_admin: {
+    CLAIM_CREATE: true,
+    DOCUMENT_UPLOAD: true,
+    LINE_ITEM_EDIT: true,
+    CODE_OVERRIDE: true,
+    RUN_RECONCILIATION: true,
+    SUBMIT_TO_PAYER: true,
+    APPROVE_CLAIM: true,
+    REJECT_CLAIM: true,
+    EXPORT_DATA: true,
+    VIEW_AUDIT_LOG: true,
+    RESET_DEMO_DATA: true,
+  },
+  super_admin: {
     CLAIM_CREATE: true,
     DOCUMENT_UPLOAD: true,
     LINE_ITEM_EDIT: true,

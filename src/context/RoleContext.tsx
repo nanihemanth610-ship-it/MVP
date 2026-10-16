@@ -127,6 +127,23 @@ export const ROLE_CONFIGS: Record<UserRole, RoleConfig> = {
       canReconcile: true,
     },
   },
+  super_admin: {
+    id: "super_admin",
+    title: "Super Administrator",
+    shortLabel: "Super Admin",
+    description:
+      "Root governance authority managing hospitals, insurance organizations, user approvals, and system monitoring.",
+    badgeLabel: "Super Admin",
+    badgeVariant: "secondary",
+    defaultAvatarInitials: "SA",
+    permissions: {
+      canUpload: true,
+      canEditLineItems: true,
+      canApproveOrReject: true,
+      canExport: true,
+      canReconcile: true,
+    },
+  },
 };
 
 interface RoleContextValue {
