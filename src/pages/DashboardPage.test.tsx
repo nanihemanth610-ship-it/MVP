@@ -41,12 +41,8 @@ describe("DashboardPage Component", () => {
     expect(uploadButton).toBeInTheDocument();
   });
 
-  it("marks derived metrics with DEMO badges and shows calculated metrics", async () => {
+  it("renders key calculated metrics without demo badges", async () => {
     renderDashboardPage();
-
-    // Verify DEMO badges exist on metrics
-    const demoBadges = await screen.findAllByText(/DEMO/i);
-    expect(demoBadges.length).toBeGreaterThan(0);
 
     // Verify four key derived metrics from Master Prompt are rendered
     expect(await screen.findByText(/Bills processed/i)).toBeInTheDocument();

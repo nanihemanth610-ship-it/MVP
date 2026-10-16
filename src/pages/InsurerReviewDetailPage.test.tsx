@@ -56,15 +56,15 @@ describe("InsurerReviewDetailPage Component", () => {
       screen.getByRole("heading", { name: "Apollo Hospitals, Bengaluru" }),
     ).toBeInTheDocument();
 
-    // Verify Demo disclaimer and Policy notice banner
+    // Verify Policy and audit notice banner
     expect(
       screen.getByText(
-        /Decisions recorded in this queue are simulated in demo mode/i,
+        /All adjudication decisions are recorded with an immutable audit log/i,
       ),
     ).toBeInTheDocument();
     expect(
       screen.getByText(
-        /does not transmit live transactions to commercial health insurance TPAs/i,
+        /Authorised reviewer decisions update claim status/i,
       ),
     ).toBeInTheDocument();
 

@@ -12,7 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 export function RoleSwitcher() {
-  const { role, roleConfig, setRole, availableRoles, isDemoMode } = useRole();
+  const { role, roleConfig, setRole, availableRoles } = useRole();
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 

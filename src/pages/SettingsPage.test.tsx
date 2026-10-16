@@ -45,24 +45,24 @@ describe("SettingsPage Component", () => {
     expect(screen.getByText(/n8n Workflow Automation/i)).toBeInTheDocument();
   });
 
-  it("supports demo data reset with confirmation dialog", async () => {
+  it("supports sample data reset with confirmation dialog", async () => {
     renderSettingsPage();
     const user = userEvent.setup();
 
     const initialResetBtn = screen.getByRole("button", {
-      name: /Reset to Factory Demo State/i,
+      name: /Reset to Default State/i,
     });
     await user.click(initialResetBtn);
 
     expect(
-      screen.getByText(/Are you sure you want to restore initial demo data\?/i),
+      screen.getByText(/Are you sure you want to restore default records\?/i),
     ).toBeInTheDocument();
 
     const confirmBtn = screen.getByRole("button", { name: /Confirm Restore/i });
     await user.click(confirmBtn);
 
     expect(
-      await screen.findByText(/Demo Records Restored/i),
+      await screen.findByText(/Records Restored/i),
     ).toBeInTheDocument();
   });
 });

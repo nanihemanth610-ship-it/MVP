@@ -42,16 +42,16 @@ describe("InsurerQueuePage Component", () => {
     await dataAccess.resetDemoData();
   });
 
-  it("renders review queue with KPI summary cards and demo disclaimer", async () => {
+  it("renders review queue with KPI summary cards and policy enforcement notice", async () => {
     renderInsurerQueuePage();
 
-    // Verify Page Header and Demo Mode Badge
+    // Verify Page Header
     expect(
       await screen.findByRole("heading", { name: /insurer review queue/i }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/DEMO MODE - SIMULATED ADJUDICATION/i),
-    ).toBeInTheDocument();
+      screen.queryByText(/DEMO MODE - SIMULATED ADJUDICATION/i),
+    ).not.toBeInTheDocument();
 
     // Verify Disclaimer that disclaims connection to real insurer / clearinghouse
     expect(

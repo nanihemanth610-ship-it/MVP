@@ -262,7 +262,7 @@ export function LoginPage() {
                 </div>
 
                 {/* Corporate Email Form */}
-                <form onSubmit={handleLiveEmailSubmit} className="space-y-3">
+                <form onSubmit={handleLiveEmailSubmit} noValidate className="space-y-3">
                   <div className="space-y-1">
                     <Label htmlFor="work-email" className="text-xs font-semibold text-foreground">
                       Institutional Email
