@@ -64,7 +64,7 @@ describe("ClaimDetailPage Component", () => {
       }),
     ).toBeInTheDocument();
     expect(screen.getByText(/BB-DEMO-1001/i)).toBeInTheDocument();
-    expect(screen.getByText(/SYNTHETIC DEMO/i)).toBeInTheDocument();
+    expect(screen.queryByText(/SYNTHETIC DEMO/i)).not.toBeInTheDocument();
 
     // Verify "Open Extraction Workspace" button linking to /review/claim-memorial-002
     const workspaceLink = screen.getByRole("link", {

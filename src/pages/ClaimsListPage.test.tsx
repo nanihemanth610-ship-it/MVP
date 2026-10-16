@@ -53,14 +53,14 @@ describe("ClaimsListPage Component", () => {
     await dataAccess.resetDemoData();
   });
 
-  it("renders claims registry heading, DEMO synthetic badge, and initial claims table", async () => {
+  it("renders claims registry heading and initial claims table", async () => {
     renderClaimsListPage();
 
-    // Verify header and demo badge
+    // Verify header
     expect(
       await screen.findByRole("heading", { name: /claims registry/i }),
     ).toBeInTheDocument();
-    expect(screen.getByText(/DEMO SYNTHETIC DATA/i)).toBeInTheDocument();
+    expect(screen.queryByText(/DEMO SYNTHETIC DATA/i)).not.toBeInTheDocument();
 
     // Verify initial claims table is rendered with seeded records
     const table = await screen.findByRole("table");

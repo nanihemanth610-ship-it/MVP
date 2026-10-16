@@ -35,41 +35,39 @@ describe("LoginPage Component", () => {
     expect(
       screen.getByText(/clear healthcare billing\. powered by vision ai\./i),
     ).toBeInTheDocument();
-    expect(screen.getByText(/vision ocr extraction/i)).toBeInTheDocument();
+    expect(screen.getByText(/deterministic ocr & itemization/i)).toBeInTheDocument();
     expect(
-      screen.getByText(/automated math reconciliation/i),
+      screen.getByText(/discrepancy audit engine/i),
     ).toBeInTheDocument();
     expect(
       screen.getByText(/human-in-the-loop adjudication/i),
     ).toBeInTheDocument();
   });
 
-  it("visibly displays synthetic data demo mode warning", () => {
+  it("renders Google OAuth and Enterprise SSO options", () => {
     renderLoginPage();
 
     expect(
-      screen.getByText(/DEMO MODE — ZERO SECRETS • SYNTHETIC DATA ONLY/i),
+      screen.getByRole("button", { name: /continue with google/i }),
     ).toBeInTheDocument();
-    expect(
-      screen.getByText(/No real patient data is collected or transmitted/i),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/enterprise sso/i)).toBeInTheDocument();
   });
 
-  it("provides 1-click persona entry cards for hospital, insurer, and patient", () => {
+  it("provides quick workspace profile access for super admin, hospital, and insurer", () => {
     renderLoginPage();
 
-    expect(screen.getByText("Hospital Billing Specialist")).toBeInTheDocument();
-    expect(screen.getByText("Insurer Claims Adjudicator")).toBeInTheDocument();
-    expect(screen.getByText("Patient / Policyholder")).toBeInTheDocument();
+    expect(screen.getByText("Super Admin")).toBeInTheDocument();
+    expect(screen.getByText("Hospital Admin")).toBeInTheDocument();
+    expect(screen.getByText("Hospital Staff")).toBeInTheDocument();
+    expect(screen.getByText("Insurance Admin")).toBeInTheDocument();
+    expect(screen.getByText("Claims Adjudicator")).toBeInTheDocument();
+    expect(screen.getByText("Patient Portal")).toBeInTheDocument();
   });
 
-  it("switches to live account tab and validates inputs with recovery option", async () => {
+  it("validates institutional email format and displays error notice", async () => {
     renderLoginPage();
 
-    // Click Live Account Tab
-    await userEvent.click(screen.getByRole("tab", { name: /live account/i }));
-
-    const emailInput = screen.getByLabelText(/corporate email address/i);
+    const emailInput = screen.getByLabelText(/institutional email/i);
     const passInput = screen.getByLabelText(/^password/i);
     expect(emailInput).toBeInTheDocument();
     expect(passInput).toBeInTheDocument();
@@ -79,19 +77,14 @@ describe("LoginPage Component", () => {
     await userEvent.type(passInput, "123456");
 
     const submitButton = screen.getByRole("button", {
-      name: /sign in to billbridge/i,
+      name: /sign in to workspace/i,
     });
     await userEvent.click(submitButton);
 
-    // Validation error banner appears
-    expect(screen.getByText(/sign in error/i)).toBeInTheDocument();
+    // Validation error notice appears
+    expect(screen.getByText(/sign in notice/i)).toBeInTheDocument();
     expect(
       screen.getByText(/valid corporate or institutional email address/i),
-    ).toBeInTheDocument();
-
-    // Recovery action is present
-    expect(
-      screen.getByText(/recovery: continue in demo mode instead/i),
     ).toBeInTheDocument();
   });
 });

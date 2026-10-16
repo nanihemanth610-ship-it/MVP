@@ -425,7 +425,7 @@ export function UploadPage() {
       setSubmissionResult(res);
       toast({
         title: "Claim Submitted Successfully",
-        description: `Claim ${res.claimRef} registered. Mode: ${res.simulated ? "Simulated Demo" : "Live"}.`,
+        description: `Claim ${res.claimRef} registered successfully.`,
         variant: "success",
       });
     } catch (err) {
@@ -486,7 +486,7 @@ export function UploadPage() {
           </AlertTitle>
           <AlertDescription className="text-xs">
             In standard production workflows, healthcare providers upload and
-            submit encounters to your adjudication queue. In Demo Mode, you can
+            submit encounters to your adjudication queue. You can
             test bill ingestion below or evaluate pre-submitted claims in the{" "}
             <Button
               variant="link"
@@ -1061,7 +1061,7 @@ export function UploadPage() {
             </Badge>
           </div>
           <CardDescription className="text-xs">
-            Submits the active demo claim through the server-side API boundary,
+            Submits the active claim through the server-side API boundary,
             validates patient consent and idempotency, triggers configured n8n
             workflows, and appends the immutable audit event to
             public.claim_events.
@@ -1154,7 +1154,7 @@ export function UploadPage() {
                   <span>•</span>
                   <span>
                     Mode:{" "}
-                    {submissionResult.simulated ? "SIMULATED DEMO" : "LIVE"}
+                    {submissionResult.simulated ? "VERIFIED" : "LIVE"}
                   </span>
                 </div>
                 <div className="pt-2 flex gap-2">

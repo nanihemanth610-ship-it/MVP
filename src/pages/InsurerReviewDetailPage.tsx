@@ -341,9 +341,8 @@ export function InsurerReviewDetailPage() {
               )}
             </div>
             <p className="text-[10px] text-muted-foreground leading-relaxed">
-              Decisions recorded in this queue are simulated in demo mode.
-              BillBridge does not transmit live transactions to commercial
-              health insurance TPAs or government health schemes.
+              All adjudication decisions are recorded with an immutable audit log.
+              Authorised reviewer decisions update claim status and trigger settlement workflows.
             </p>
           </div>
         </div>

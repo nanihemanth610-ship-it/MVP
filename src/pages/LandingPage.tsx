@@ -165,7 +165,6 @@ export function LandingPage() {
                     <div className="flex items-center gap-2">
                       <span className="font-semibold text-base">Apollo Hospitals, Bengaluru</span>
                       <Badge variant="secondary" className="text-[10px]">ROHINI-BLR-8821</Badge>
-                      <Badge variant="warning" className="text-[10px]">DEMO ENCOUNTER</Badge>
                     </div>
                     <p className="text-xs text-muted-foreground mt-0.5">
                       Encounter Ref: <span className="font-mono text-foreground font-medium">BB-DEMO-1001</span> • Patient: <span className="font-medium text-foreground">Rajesh Sharma</span> • Cashless Pre-Auth

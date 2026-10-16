@@ -73,13 +73,6 @@ export function RoleSwitcher() {
           </span>
         </span>
 
-        {isDemoMode && (
-          <span className="hidden lg:inline-flex items-center gap-1 text-[10px] font-mono px-1.5 py-0.2 rounded bg-amber-500/15 text-amber-900 dark:text-amber-200 border border-amber-500/30">
-            <Sparkles className="h-2.5 w-2.5" />
-            DEMO
-          </span>
-        )}
-
         <ChevronDown
           className={cn(
             "h-3.5 w-3.5 text-muted-foreground transition-transform duration-150",
@@ -101,7 +94,7 @@ export function RoleSwitcher() {
               Switch Persona / Workspace
             </p>
             <p className="text-[10px] text-muted-foreground mt-0.5">
-              Simulates different permissions and review workflows in demo mode.
+              Switch operational role view to inspect specific permissions and workflows.
             </p>
           </div>
 

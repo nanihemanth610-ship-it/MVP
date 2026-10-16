@@ -205,7 +205,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
         </nav>
 
         <div className="pt-3 border-t border-border/70 text-[10px] text-muted-foreground text-center">
-          BillBridge v0.2.0 • Demo Workspace
+          BillBridge v0.3.0 • Enterprise Workspace
         </div>
       </div>
     </div>

@@ -50,9 +50,9 @@ export function SettingsPage() {
       const dataAccess = getDataAccess();
       await dataAccess.resetDemoData();
       toast({
-        title: "Demo Records Restored",
+        title: "Records Restored",
         description:
-          "All synthetic encounters (Fortis, Apollo, Max) reset to initial ground truth.",
+          "All hospital billing encounters reset to default baseline.",
         variant: "success",
       });
       setShowResetConfirm(false);
@@ -228,8 +228,7 @@ export function SettingsPage() {
             </CardTitle>
           </div>
           <CardDescription className="text-xs">
-            Live status of external APIs and persistence tiers. Unconfigured
-            services run in verified DEMO mode.
+            Live status of external APIs and persistence tiers across your organization.
           </CardDescription>
         </CardHeader>
         <CardContent className="p-4 pt-0">
@@ -283,7 +282,7 @@ export function SettingsPage() {
                 </div>
               </div>
               <Badge variant={hasGeminiKey ? "success" : "secondary"}>
-                {hasGeminiKey ? "LIVE KEY DETECTED" : "DEMO PREVIEW ADAPTER"}
+                {hasGeminiKey ? "LIVE KEY DETECTED" : "OFFLINE ADAPTER"}
               </Badge>
             </div>
 
@@ -351,12 +350,12 @@ export function SettingsPage() {
           <div className="flex items-center gap-2 text-destructive">
             <AlertTriangle className="h-4 w-4" />
             <CardTitle className="text-sm font-semibold">
-              Demo Dataset Management
+              Sample Dataset Management
             </CardTitle>
           </div>
           <CardDescription className="text-xs">
             Reset all modified claims, audit logs, and decisions back to initial
-            Indian healthcare ground truth.
+            standard baseline records.
           </CardDescription>
         </CardHeader>
         <CardContent className="p-4 pt-2 space-y-3">
@@ -372,12 +371,12 @@ export function SettingsPage() {
               onClick={() => setShowResetConfirm(true)}
               className="text-xs text-destructive border-destructive/40 hover:bg-destructive/10"
             >
-              Reset to Factory Demo State
+              Reset to Default State
             </Button>
           ) : (
             <div className="p-3 rounded-lg border border-destructive/40 bg-background space-y-2">
               <p className="text-xs font-semibold text-destructive">
-                Are you sure you want to restore initial demo data?
+                Are you sure you want to restore default records?
               </p>
               <div className="flex gap-2">
                 <Button

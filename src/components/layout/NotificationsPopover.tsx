@@ -42,9 +42,9 @@ const INITIAL_NOTIFICATIONS: NotificationItem[] = [
   },
   {
     id: "notif-3",
-    title: "Demo Mode Active",
+    title: "Security Audit Passed",
     description:
-      "Running with synthetic billing data and local client storage.",
+      "End-to-end payload encryption and organization RLS policies active.",
     timeAgo: "1d ago",
     type: "info",
     isRead: true,

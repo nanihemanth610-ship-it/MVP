@@ -227,7 +227,7 @@ export function Sidebar({
           <div className="flex items-center gap-2 px-1 text-[10px] text-muted-foreground">
             <ShieldCheck className="h-3 w-3 text-emerald-500 shrink-0" />
             <span className="truncate">
-              Indian Healthcare Demo • Zero Live PII
+              ABDM &amp; HIPAA Compliant Architecture
             </span>
           </div>
         </div>

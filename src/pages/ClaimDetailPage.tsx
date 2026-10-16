@@ -198,12 +198,6 @@ export function ClaimDetailPage() {
             >
               {claim.status.replace("_", " ")}
             </Badge>
-            <Badge
-              variant="outline"
-              className="text-[10px] font-mono text-muted-foreground"
-            >
-              SYNTHETIC DEMO
-            </Badge>
             {claim.claimType && (
               <Badge variant="teal" className="text-[10px] font-medium">
                 {claim.claimType}

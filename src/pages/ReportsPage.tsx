@@ -129,9 +129,6 @@ export function ReportsPage() {
             <h1 className="text-2xl font-bold tracking-tight text-foreground">
               Analytics & Adjudication Reports
             </h1>
-            <Badge variant="secondary" className="text-xs">
-              DEMO METRICS
-            </Badge>
           </div>
           <p className="text-sm text-muted-foreground">
             Financial reconciliation statistics, audit variance summaries, and

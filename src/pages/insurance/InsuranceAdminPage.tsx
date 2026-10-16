@@ -299,9 +299,6 @@ export function InsuranceAdminPage() {
               <Badge variant="secondary" className="text-[10px] text-violet-700 dark:text-violet-300 border-violet-300 dark:border-violet-800">
                 PAYER ADJUDICATION
               </Badge>
-              <Badge variant="secondary" className="text-[10px]">
-                DEMO ENVIRONMENT
-              </Badge>
             </div>
             <p className="text-xs text-muted-foreground mt-0.5">
               Authorized Carrier: <strong className="text-foreground">{PAYER_NAME}</strong> • Third-Party Administrator: <span className="text-foreground font-medium">{TPA_ORGANIZATION}</span>

@@ -81,11 +81,6 @@ export function ProfilePage() {
                 <Badge variant="teal" className="text-xs capitalize">
                   {roleConfig.title}
                 </Badge>
-                {user?.isDemo && (
-                  <Badge variant="warning" className="text-[10px]">
-                    Simulated Session
-                  </Badge>
-                )}
               </div>
             </CardContent>
           </Card>

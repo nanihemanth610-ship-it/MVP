@@ -164,30 +164,30 @@ export function PatientClaimSummaryPage() {
         };
       case "approved":
         return {
-          titleEn: "Claim Approved in Demo Simulation",
-          titleTe: "డెమో పరిశీలనలో క్లెయిమ్ ఆమోదించబడింది",
-          badgeEn: "Simulated Approval",
-          badgeTe: "నమూనా ఆమోదం",
+          titleEn: "Claim Approved",
+          titleTe: "క్లెయిమ్ ఆమోదించబడింది",
+          badgeEn: "Approved",
+          badgeTe: "ఆమోదించబడింది",
           variant: "success" as const,
           explanationEn:
-            "In this demonstration mode, your claim has been simulated as approved. The insurer has accepted verified hospital charges subject to standard co-pay/deductible rules.",
+            "Your claim has been reviewed and approved. The insurer has accepted verified hospital charges subject to standard co-pay/deductible rules.",
           explanationTe:
-            "ఈ డెమో విధానంలో మీ క్లెయిమ్ ఆమోదించబడినట్లు నమోదు చేయబడింది. ఆసుపత్రి నిర్ధారిత ఖర్చులను పాలసీ నిబంధనల ప్రకారం భీమా సంస్థ ఆమోదించింది.",
+            "మీ క్లెయిమ్ విజయవంతంగా ఆమోదించబడింది. ఆసుపత్రి నిర్ధారిత ఖర్చులను పాలసీ నిబంధనల ప్రకారం భీమా సంస్థ ఆమోదించింది.",
           actionEn: "Action: Settlement and payout tracking enabled.",
           actionTe:
             "తదుపరి చర్య: తుది చెల్లింపు వివరాల ట్రాకింగ్ ప్రారంభించబడింది.",
         };
       case "rejected":
         return {
-          titleEn: "Claim Decision: Not Approved in Demo Simulation",
-          titleTe: "క్లెయిమ్ నిర్ణయం: డెమోలో తిరస్కరించబడింది",
-          badgeEn: "Simulated Rejection",
-          badgeTe: "నమూనా తిరస్కరణ",
+          titleEn: "Claim Decision: Not Approved",
+          titleTe: "క్లెయిమ్ నిర్ణయం: తిరస్కరించబడింది",
+          badgeEn: "Rejected",
+          badgeTe: "తిరస్కరించబడింది",
           variant: "destructive" as const,
           explanationEn:
-            "In this simulation, the claim was not approved due to missing documentation or non-covered exclusions. Contact your hospital billing desk or insurance coordinator to file an inquiry.",
+            "The claim was not approved due to missing documentation or non-covered exclusions. Contact your hospital billing desk or insurance coordinator to file an inquiry.",
           explanationTe:
-            "ఈ నమూనా పరిశీలనలో క్లెయిమ్ ఆమోదించబడలేదు. కొన్ని ముఖ్యమైన పత్రాలు లేకపోవడం లేదా పాలసీ పరిధిలోకి రాని చికిత్స కావడం కారణం కావచ్చు. వివరాల కోసం మీ ఆసుపత్రి భీమా విభాగాన్ని సంప్రదించండి.",
+            "ఈ పరిశీలనలో క్లెయిమ్ ఆమోదించబడలేదు. కొన్ని ముఖ్యమైన పత్రాలు లేకపోవడం లేదా పాలసీ పరిధిలోకి రాని చికిత్స కావడం కారణం కావచ్చు. వివరాల కోసం మీ ఆసుపత్రి భీమా విభాగాన్ని సంప్రదించండి.",
           actionEn:
             "Action: Review inquiry options with hospital insurance coordinator.",
           actionTe: "తదుపరి చర్య: ఆసుపత్రి భీమా సమన్వయకర్తతో సమీక్షించండి.",
@@ -463,7 +463,7 @@ export function PatientClaimSummaryPage() {
                 labelTe: "భీమా సంస్థ సమీక్ష",
                 descEn:
                   claim.status === "approved"
-                    ? "Approved in demo"
+                    ? "Approved"
                     : claim.status === "under_review"
                       ? "Review in progress"
                       : "Awaiting hospital correction",

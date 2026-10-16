@@ -165,12 +165,6 @@ export function ClaimsListPage() {
             <h1 className="text-2xl font-bold tracking-tight text-foreground">
               Claims Registry
             </h1>
-            <Badge
-              variant="outline"
-              className="text-[10px] font-mono border-primary/40 text-primary"
-            >
-              DEMO SYNTHETIC DATA
-            </Badge>
             <Badge variant={roleConfig.badgeVariant} className="text-[10px]">
               {roleConfig.badgeLabel}
             </Badge>
@@ -440,11 +434,6 @@ export function ClaimsListPage() {
                         >
                           {claim.claimNumber}
                         </Link>
-                        {claim.isSyntheticDemo && (
-                          <span className="text-[9px] font-mono uppercase bg-muted/90 px-1 py-0.2 rounded text-muted-foreground">
-                            DEMO
-                          </span>
-                        )}
                       </div>
                       <div className="text-[11px] text-muted-foreground mt-0.5">
                         {formatDate(

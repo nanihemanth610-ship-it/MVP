@@ -327,14 +327,6 @@ export function ExportDropdown({
               </div>
             </div>
           </div>
-
-          {/* Demo Data Disclaimer Footer */}
-          <div className="mt-1 px-2 py-1 text-[10px] text-amber-800 dark:text-amber-300 bg-amber-500/10 rounded-md border border-amber-500/20 flex items-center gap-1.5">
-            <span className="font-mono font-bold">[DEMO]</span>
-            <span className="truncate">
-              Metrics derived strictly from active synthetic encounters.
-            </span>
-          </div>
         </div>
       )}
     </div>

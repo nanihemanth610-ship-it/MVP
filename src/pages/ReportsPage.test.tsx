@@ -32,13 +32,13 @@ describe("ReportsPage Component", () => {
     await dataAccess.resetDemoData();
   });
 
-  it("renders report header, DEMO METRICS badge, and financial cards", async () => {
+  it("renders report header and financial reconciliation cards", async () => {
     renderReportsPage();
 
     expect(
       await screen.findByText(/Analytics & Adjudication Reports/i),
     ).toBeInTheDocument();
-    expect(screen.getByText(/DEMO METRICS/i)).toBeInTheDocument();
+    expect(screen.queryByText(/DEMO METRICS/i)).not.toBeInTheDocument();
     expect(screen.getByText(/Gross Invoiced Billed/i)).toBeInTheDocument();
     expect(screen.getByText(/Approved Payout Amount/i)).toBeInTheDocument();
   });

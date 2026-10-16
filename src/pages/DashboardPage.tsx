@@ -358,7 +358,7 @@ export function DashboardPage() {
             Key Healthcare Metrics
           </h2>
           <span className="text-[10px] font-mono text-muted-foreground bg-muted/60 px-2 py-0.5 rounded border border-border/50">
-            DEMO • {metrics.totalEncounters} LOCAL RECORDS • INDIAN RUPEES (₹)
+            {metrics.totalEncounters} ACTIVE ENCOUNTERS • INDIAN RUPEES (₹)
           </span>
         </div>
 
@@ -376,14 +376,6 @@ export function DashboardPage() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {/* Metric 1: Bills Processed */}
             <Card className="relative overflow-hidden border-border/80 transition-shadow hover:shadow-xs">
-              <div className="absolute top-3 right-3">
-                <Badge
-                  variant="secondary"
-                  className="text-[9px] font-mono py-0 px-1.5"
-                >
-                  DEMO
-                </Badge>
-              </div>
               <CardHeader className="pb-1.5">
                 <CardDescription className="text-[11px] font-medium uppercase tracking-wider flex items-center gap-1.5 text-muted-foreground">
                   <FileText className="h-3.5 w-3.5 text-primary shrink-0" />
@@ -402,14 +394,6 @@ export function DashboardPage() {
 
             {/* Metric 2: Claims Awaiting Review */}
             <Card className="relative overflow-hidden border-border/80 transition-shadow hover:shadow-xs">
-              <div className="absolute top-3 right-3">
-                <Badge
-                  variant="info"
-                  className="text-[9px] font-mono py-0 px-1.5"
-                >
-                  DEMO
-                </Badge>
-              </div>
               <CardHeader className="pb-1.5">
                 <CardDescription className="text-[11px] font-medium uppercase tracking-wider flex items-center gap-1.5 text-muted-foreground">
                   <Clock className="h-3.5 w-3.5 text-blue-500 shrink-0" />
@@ -428,14 +412,6 @@ export function DashboardPage() {
 
             {/* Metric 3: Bill Discrepancies */}
             <Card className="relative overflow-hidden border-border/80 transition-shadow hover:shadow-xs">
-              <div className="absolute top-3 right-3">
-                <Badge
-                  variant="warning"
-                  className="text-[9px] font-mono py-0 px-1.5"
-                >
-                  DEMO
-                </Badge>
-              </div>
               <CardHeader className="pb-1.5">
                 <CardDescription className="text-[11px] font-medium uppercase tracking-wider flex items-center gap-1.5 text-muted-foreground">
                   <AlertTriangle className="h-3.5 w-3.5 text-amber-500 shrink-0" />
@@ -454,14 +430,6 @@ export function DashboardPage() {
 
             {/* Metric 4: Claims with a Recorded Decision */}
             <Card className="relative overflow-hidden border-border/80 transition-shadow hover:shadow-xs">
-              <div className="absolute top-3 right-3">
-                <Badge
-                  variant="teal"
-                  className="text-[9px] font-mono py-0 px-1.5"
-                >
-                  DEMO
-                </Badge>
-              </div>
               <CardHeader className="pb-1.5">
                 <CardDescription className="text-[11px] font-medium uppercase tracking-wider flex items-center gap-1.5 text-muted-foreground">
                   <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
@@ -735,9 +703,6 @@ export function DashboardPage() {
                               >
                                 {claim.claimNumber}
                               </Link>
-                              <span className="text-[9px] font-mono uppercase bg-muted/80 px-1 py-0.2 rounded text-muted-foreground border border-border/40">
-                                DEMO
-                              </span>
                             </div>
                             <div className="text-[11px] text-muted-foreground mt-0.5">
                               Patient: {claim.patient.fullName.value}
@@ -1185,11 +1150,6 @@ export function DashboardPage() {
 
                     <div className="pt-1 flex items-center justify-between text-[9px] font-mono text-muted-foreground border-t border-border/40">
                       <span>{stage.time}</span>
-                      {stage.simulated && (
-                        <span className="text-amber-800 dark:text-amber-300 font-semibold">
-                          DEMO
-                        </span>
-                      )}
                     </div>
                   </div>
                 );
@@ -1205,8 +1165,7 @@ export function DashboardPage() {
           <ShieldCheck className="h-4 w-4 text-teal shrink-0" />
           <span>
             Displaying {filteredClaims.length} of {claims.length} claims. Indian
-            Rupees (₹) format • Client-side local persistence • Safe
-            demonstration workspace.
+            Rupees (₹) format • Client-side verification • Enterprise workspace.
           </span>
         </div>
 
@@ -1215,10 +1174,10 @@ export function DashboardPage() {
           variant="outline"
           onClick={() => setResetModalOpen(true)}
           className="text-xs h-7.5 gap-1.5 shrink-0 cursor-pointer text-muted-foreground hover:text-foreground"
-          title="Reset to default synthetic demo encounters"
+          title="Reset to default baseline encounters"
         >
           <RotateCcw className="h-3 w-3" />
-          Reset Demo Records
+          Reset Records
         </Button>
       </div>
 
@@ -1227,21 +1186,21 @@ export function DashboardPage() {
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
             <DialogTitle className="text-base font-bold text-foreground flex items-center gap-2">
-              <RotateCcw className="h-4 w-4 text-amber-500" />
-              Reset Demo Records
+              <RotateCcw className="h-4 w-4 text-primary" />
+              Reset Records
             </DialogTitle>
             <DialogDescription className="text-xs text-muted-foreground leading-relaxed">
-              This will restore the 3 default Indian healthcare demonstration
+              This will restore the 3 default Indian healthcare
               claims (Apollo Hospitals Bengaluru, Max Super Speciality New
               Delhi, and Fortis Memorial Gurugram) and clear any local session
               edits.
             </DialogDescription>
           </DialogHeader>
 
-          <div className="p-3 rounded-lg bg-amber-50/60 dark:bg-amber-950/30 border border-amber-500/20 text-xs text-amber-900 dark:text-amber-300 space-y-1">
-            <strong>Demonstration Data Only:</strong>
-            <p className="text-[11px] text-amber-800 dark:text-amber-400">
-              No live insurance networks or real patient PII will be affected.
+          <div className="p-3 rounded-lg bg-secondary/60 border border-border/60 text-xs text-muted-foreground space-y-1">
+            <strong className="text-foreground">Record Baseline Reset:</strong>
+            <p className="text-[11px]">
+              Custom modifications will be replaced with baseline hospital invoices.
             </p>
           </div>
 

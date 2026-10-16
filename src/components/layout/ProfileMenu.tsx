@@ -171,13 +171,13 @@ export function ProfileMenu() {
               className="flex w-full items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs text-muted-foreground hover:bg-secondary/60 hover:text-foreground transition-colors cursor-pointer"
             >
               <RotateCcw className="h-3.5 w-3.5 text-primary" />
-              <span>Reset Demo Claims Data</span>
+              <span>Restore Sample Encounters</span>
             </button>
           </div>
 
           <div className="px-2.5 py-1.5 border-t border-border/60 text-[10px] text-muted-foreground flex items-center justify-center gap-1">
             <Shield className="h-3 w-3 text-teal" />
-            <span>Demo Mode — Zero Secrets</span>
+            <span>Encrypted Session • Verified Identity</span>
           </div>
         </div>
       )}

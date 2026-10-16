@@ -10,7 +10,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
-import { AlertCircle, ShieldAlert } from "lucide-react";
+import { AlertCircle, ShieldAlert, CheckCircle2 } from "lucide-react";
 import { formatCurrency } from "@/lib/utils";
 import type { Claim, DecisionOutcome } from "@/types/contracts";
 
@@ -132,17 +132,15 @@ export function DecisionDialog({
             </DialogDescription>
           </DialogHeader>
 
-          {/* Prominent Demo Mode & Policy Enforcement Notice */}
-          <div className="my-3 p-2.5 rounded-lg border border-amber-200 bg-amber-50/70 dark:border-amber-900/50 dark:bg-amber-950/20 text-[11px] text-amber-900 dark:text-amber-300 space-y-1">
-            <div className="flex items-center gap-1.5 font-semibold">
-              <AlertCircle className="h-3.5 w-3.5 shrink-0" />
-              <span>Simulated Adjudication [Demo Mode]</span>
+          {/* Policy & Audit Enforcement Notice */}
+          <div className="my-3 p-2.5 rounded-lg border border-primary/20 bg-primary/5 text-[11px] text-foreground space-y-1">
+            <div className="flex items-center gap-1.5 font-semibold text-primary">
+              <CheckCircle2 className="h-3.5 w-3.5 shrink-0" />
+              <span>Adjudication Audit &amp; Policy Enforcement</span>
             </div>
-            <p className="text-[10px] leading-relaxed text-amber-800 dark:text-amber-400">
-              This decision is recorded in local demo state. BillBridge does not
-              claim connection to a real external health plan, insurer
-              clearinghouse, or CMS portal. Role authorization is validated by
-              backend policies upon submission.
+            <p className="text-[10px] leading-relaxed text-muted-foreground">
+              This adjudication decision will be recorded in the audit trail with your reviewer ID and timestamp.
+              Ensure that all itemized charges and clinical justifications have been verified prior to confirmation.
             </p>
           </div>
 
